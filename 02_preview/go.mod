@@ -1,12 +1,14 @@
-module github.com/csg33k/bubbles/01_hello_state
+module github.com/csg33k/bubbles/02_preview
 
 go 1.23.3
 
 require (
+	github.com/76creates/stickers v1.4.1
 	github.com/charmbracelet/bubbles v0.20.0
 	github.com/charmbracelet/bubbletea v1.2.4
 	github.com/charmbracelet/lipgloss v1.0.0
-	golang.org/x/term v0.26.0
+	github.com/gocarina/gocsv v0.0.0-20240520201108-78e41c74b4b1
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (

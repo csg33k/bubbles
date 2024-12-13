@@ -80,15 +80,14 @@ func (r *rootModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	}
 
-	ndx := 0
-	//Update all models
-	for _, val := range r.modelsMap {
+	// Update all models
+	for ndx, val := range r.modelsMap {
 		_, cmd = val.Update(msg)
-		if ndx == int(r.paneSelected) {
+		if ndx == r.paneSelected {
 			content := activeStyle.Render(val.View())
-			r.flexBox.GetColumn(ndx).GetCell(0).SetContent(content)
+			r.flexBox.GetColumn(int(ndx)).GetCell(0).SetContent(content)
 		} else {
-			r.flexBox.GetColumn(ndx).GetCell(0).SetContent(val.View())
+			r.flexBox.GetColumn(int(ndx)).GetCell(0).SetContent(val.View())
 		}
 		cmds = append(cmds, cmd)
 		ndx++
